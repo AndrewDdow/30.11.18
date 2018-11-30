@@ -4,6 +4,12 @@ package pkg30.pkg11.pkg18;
 
 public class Main {
     public static void main(String[] args) {
+        Vector[] vector = new Vector[4];
+        vector[0] = new Vector(0, 0, 0);
+        vector[1] = new Vector(0, 1, 0);
+        vector[2] = new Vector(1, 1, 0);
+        vector[3] = new Vector(1, 0, 0);
+        Facet face = new Facet(vector);
         
 //        Vector a = new Vector(0, 10 ,0);
 //        Vector b = new Vector(20 ,0 ,0);
