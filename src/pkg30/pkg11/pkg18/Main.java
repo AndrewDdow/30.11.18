@@ -10,19 +10,6 @@ public class Main {
         vector[2] = new Vector(1, 1, 0);
         vector[3] = new Vector(1, 0, 0);
         Facet face = new Facet(vector);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
 //        Vector a = new Vector(0, 10 ,0);
 //        Vector b = new Vector(20 ,0 ,0);
 //        
