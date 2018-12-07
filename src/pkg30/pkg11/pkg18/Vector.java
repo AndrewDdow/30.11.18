@@ -42,5 +42,6 @@ public class Vector {
     }
     public void printCoordinates() {
         System.out.println(" x = " + this.x + " y = " + this.y + " z = " + this.z);
+        System.out.println("");
     }
 }

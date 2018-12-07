@@ -1,16 +1,24 @@
 package pkg30.pkg11.pkg18;
 
 //import java.util.Scanner;
+import java.awt.*;
+import java.awt.geom.*;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Четыре вектора квадрата");
         Vector[] vector = new Vector[4];
         vector[0] = new Vector(0, 0, 0);
-        vector[1] = new Vector(0, 1, 0);
+        vector[1] = new Vector(1, 0, 0);
         vector[2] = new Vector(1, 1, 0);
-        vector[3] = new Vector(1, 0, 0);
-        Facet face = new Facet(vector);
+        vector[3] = new Vector(0, 1, 0);
+        Color color = new Color(0, 0, 0);
+        Facet face = new Facet(vector[0], vector[1], vector[2], vector[3], color);
+        face.printVectors();
+        
+        System.out.println("Почти нормаль");
+        Vector normal = face.normal();
+        normal.printCoordinates();
         
         System.out.println("Два вектора");
         Vector a = new Vector(0, 10 ,0);
@@ -21,6 +29,7 @@ public class Main {
         System.out.println("Скалярное произведение векторов а и b");
         double test = a.dot(b);
         System.out.println(test);
+        System.out.println("");
         
         System.out.println("Сложение векторов");
         Vector p = a.plus(b);
@@ -30,16 +39,16 @@ public class Main {
         Vector m = b.minus(a);
         m.printCoordinates();
         
-        System.out.println("Модуль?");
+        System.out.println("Векторное произведение");
         Vector c = b.cross(a);
         c.printCoordinates();
         
         System.out.println("Поворот относительно х");
-        Vector rx = p.rotateByX(180);
+        Vector rx = p.rotateByX(90);
         rx.printCoordinates();
         
         System.out.println("Поворот относительно y");
-        Vector ry = p.rotateByY(180);
+        Vector ry = p.rotateByY(90);
         ry.printCoordinates();
         
         System.out.println("Поворот относительно z");
