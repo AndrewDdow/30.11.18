@@ -16,6 +16,22 @@ public class Main {
         Facet face = new Facet(vector[0], vector[1], vector[2], vector[3], color);
         face.printVectors();
         
+        System.out.println("Вращение плоскости относительно x");
+        face.rotateByX(90);
+        face.printVectors();
+        
+        System.out.println("Вращение плоскости относительно y");
+        face.rotateByY(90);
+        face.printVectors();
+        
+        System.out.println("Вращение плоскости относительно z");
+        face.rotateByZ(90);
+        face.printVectors();
+        
+        System.out.println("Вращение плоскости относительно x, y, z");
+        face.rotate(90, 90, 90);
+        face.printVectors();
+        
         System.out.println("Почти нормаль");
         Vector normal = face.normal();
         normal.printCoordinates();
@@ -55,7 +71,7 @@ public class Main {
         Vector rz = p.rotateByZ(90);
         rz.printCoordinates();
         
-        System.out.println("Поворот относительно x,y,z");
+        System.out.println("Поворот относительно x, y, z");
         Vector r = p.rotate(90, 90, 90);
         r.printCoordinates();
 

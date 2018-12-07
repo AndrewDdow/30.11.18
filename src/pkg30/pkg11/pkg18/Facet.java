@@ -7,7 +7,6 @@ public class Facet {
     public Vector[] v;
     public Color color;
     
-    
     public Facet(Vector v1, Vector v2, Vector v3, Vector v4, Color color) {
         v = new Vector[4];
         
@@ -23,10 +22,35 @@ public class Facet {
         
         return a.cross(b);
     }
+    public void rotateByX(double angle){
+        v[0] = v[0].rotateByX(angle);
+        v[1] = v[1].rotateByX(angle);
+        v[2] = v[2].rotateByX(angle);
+        v[3] = v[3].rotateByX(angle);
+    }
+    public void rotateByY(double angle){
+        v[0] = v[0].rotateByY(angle);
+        v[1] = v[1].rotateByY(angle);
+        v[2] = v[2].rotateByY(angle);
+        v[3] = v[3].rotateByY(angle);
+    }
+    public void rotateByZ(double angle){
+        v[0] = v[0].rotateByZ(angle);
+        v[1] = v[1].rotateByZ(angle);
+        v[2] = v[2].rotateByZ(angle);
+        v[3] = v[3].rotateByZ(angle);
+    }
+    public void rotate(double angleX, double angleY, double angleZ){
+        v[0] = v[0].rotate(angleX, angleY, angleZ);
+        v[1] = v[1].rotate(angleX, angleY, angleZ);
+        v[2] = v[2].rotate(angleX, angleY, angleZ);
+        v[3] = v[3].rotate(angleX, angleY, angleZ);
+    }
     public void printVectors() {
         for (int i = 0; i < 4; i++) {
             v[i].printCoordinates();
         }
         System.out.println("");
     }
+    
 }
