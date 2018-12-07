@@ -51,18 +51,15 @@ public class Main {
             @Override
             public void paintComponent(Graphics g){
                 Graphics2D g2 = (Graphics2D)g;
-                g2.setColor(Color.WHITE);
+                g2.setColor(Color.black);
                 g2.fillRect(0, 0, getWidth(), getHeight());
                 g2.translate(getWidth()/2, getHeight()/2);
-                g2.setColor(Color.BLACK);
-                
                 f1.draw(g2);
                 f2.draw(g2);
                 f3.draw(g2);
                 f4.draw(g2);
                 f5.draw(g2);
                 f6.draw(g2);
-                
             }
         };
 
