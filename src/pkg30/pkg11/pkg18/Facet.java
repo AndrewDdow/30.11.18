@@ -6,10 +6,9 @@ import java.awt.geom.*;
 public class Facet {
     public Vector[] v;
     public Color color;
-    
+    double c = -200;
     public Facet(Vector v1, Vector v2, Vector v3, Vector v4, Color color) {
         v = new Vector[4];
-        
         v[0] = v1;
         v[1] = v2;
         v[2] = v3;
@@ -18,7 +17,6 @@ public class Facet {
     }
     public Facet(Vector v1, Vector v2, Vector v3, Vector v4) {
         v = new Vector[4];
-        
         v[0] = v1;
         v[1] = v2;
         v[2] = v3;
@@ -28,7 +26,6 @@ public class Facet {
     public Vector normal(){
         Vector a = new Vector(v[1].x - v[0].x, v[1].y - v[0].y, v[1].z - v[0].z);
         Vector b = new Vector(v[2].x - v[1].x, v[2].y - v[1].y, v[2].z - v[1].z);
-        
         return a.cross(b);
     }
     public void rotateByX(double angle){
@@ -64,17 +61,38 @@ public class Facet {
         System.out.println("");
     }
     public void draw(Graphics2D g2){
-       
         g2.setColor(color);
         if(this.normal().z < 0){
         Path2D path = new Path2D.Double();
-        path.moveTo(v[0].x, v[0].y);
-        path.lineTo(v[1].x, v[1].y);
-        path.lineTo(v[2].x, v[2].y);
-        path.lineTo(v[3].x, v[3].y);
+        
+        
+        path.moveTo(v[0].x, -v[0].y);
+        path.lineTo(v[1].x, -v[1].y);
+        path.lineTo(v[2].x, -v[2].y);
+        path.lineTo(v[3].x, -v[3].y);
         path.closePath();
         g2.draw(path);
         g2.fill(path);
+        
+        
+       }
+    }
+        public void draw2(Graphics2D g2){
+        g2.setColor(color);
+        if(this.normal().z < 0){
+        Path2D path = new Path2D.Double();
+        
+      
+        
+        path.moveTo(v[0].Obor().x, -v[0].Obor().y);
+        path.lineTo(v[1].Obor().x, -v[1].Obor().y);
+        path.lineTo(v[2].Obor().x, -v[2].Obor().y);
+        path.lineTo(v[3].Obor().x, -v[3].Obor().y);
+        path.closePath();
+        g2.draw(path);
+        g2.fill(path);
+        
+        
        }
     }
 }

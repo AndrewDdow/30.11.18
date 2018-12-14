@@ -10,7 +10,7 @@ import javax.swing.SwingConstants;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Четыре вектора квадрата");
+//        System.out.println("Четыре вектора квадрата");
         
         Vector v0 = new Vector(0, 0, 0);
         Vector v1 = new Vector(100, 0, 0);
@@ -25,47 +25,18 @@ public class Main {
 //        Facet face = new Facet(v[0], v[1], v[2], v[3]);
 //        face.printVectors();
         
-       
-        Facet f1 = new Facet(v0, v1, v2, v3, color.green);
-        Facet f2 = new Facet(v5, v1, v2, v6);
-        Facet f3 = new Facet(v6, v2, v3, v7);
+        Facet f1 = new Facet(v0, v3, v2, v1, color.white);
+        Facet f2 = new Facet(v5, v1, v2, v6, color.yellow);
+        Facet f3 = new Facet(v6, v2, v3, v7, color.blue);
         Facet f4 = new Facet(v0, v4, v7, v3, color.yellow);
-        Facet f5 = new Facet(v0, v1, v5, v4);
+        Facet f5 = new Facet(v0, v1, v5, v4, color.green);
         Facet f6 = new Facet(v4, v5, v6, v7, color.pink);
-        
+
         Cube c = new Cube(f1, f2, f3, f4, f5, f6, color);
         
-        c.rotate(135, -45, 135);
+        c.rotate(-67, -130,45);
+        JFrame frame = new Drawer(c);
         
-        JFrame frame = new JFrame();
-        Container pane = frame.getContentPane();
-        pane.setLayout(new BorderLayout());
-
-        JSlider headingSlider = new JSlider(0, 360, 180);
-        pane.add(headingSlider, BorderLayout.SOUTH);
-
-        JSlider pitchSlider = new JSlider(SwingConstants.VERTICAL, -90, 90, 0);
-        pane.add(pitchSlider, BorderLayout.EAST);
-
-        JPanel renderPanel = new JPanel(){
-            @Override
-            public void paintComponent(Graphics g){
-                Graphics2D g2 = (Graphics2D)g;
-                g2.setColor(Color.black);
-                g2.fillRect(0, 0, getWidth(), getHeight());
-                g2.translate(getWidth()/2, getHeight()/2);
-                f1.draw(g2);
-                f2.draw(g2);
-                f3.draw(g2);
-                f4.draw(g2);
-                f5.draw(g2);
-                f6.draw(g2);
-            }
-        };
-
-        pane.add(renderPanel, BorderLayout.CENTER);
-        frame.setSize(400, 400);
-        frame.setVisible(true);
 //        System.out.println("Вращение плоскости относительно x");
 //        face.rotateByX(90);
 //        face.printVectors();
