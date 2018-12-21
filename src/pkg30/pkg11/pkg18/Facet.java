@@ -77,22 +77,20 @@ public class Facet {
         
        }
     }
-        public void draw2(Graphics2D g2){
+    public void draw2(Graphics2D g2){
          g2.setColor(this.color);
-
             Path2D path = new Path2D.Double();
-
-
             path.moveTo(v[0].x*c/(c-v[0].z), -v[0].y*c/(c-v[0].z));
             path.lineTo(v[1].x*c/(c-v[1].z), -v[1].y*c/(c-v[1].z));
             path.lineTo(v[2].x*c/(c-v[2].z), -v[2].y*c/(c-v[2].z));
             path.lineTo(v[3].x*c/(c-v[3].z), -v[3].y*c/(c-v[3].z));
-
             path.closePath();
-
             g2.fill(path);
-        
-        
-       
     }
+    public void translate(double x, double y, double z){
+         for (int i = 0; i < 4; i++) {
+             this.v[i].translate(x,y,z);
+         }
+         }
+    
 }

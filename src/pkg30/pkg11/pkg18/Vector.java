@@ -45,6 +45,11 @@ public class Vector {
         System.out.println(" x = " + this.x + " y = " + this.y + " z = " + this.z);
         System.out.println("");
     }
+    public void translate(double x, double y, double z){
+        this.x += x;
+        this.y += y;
+        this.z += z;
+    }
 //     public Vector Obor() {
 //        double x2;
 //        double y2;

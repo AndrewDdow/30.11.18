@@ -36,6 +36,11 @@ public class Cube {
         f[5].draw(g2);       
     }
     
+    public void translate(double x, double y, double z){
+         for (int i = 0; i < 6; i++) {
+             this.f[i].translate(x,y,z);
+         }
+         }
     public void PerspecProekcDraw(Graphics2D g2){
         g2.setColor(this.color);
         for (int i = 0; i < 6; i++) {

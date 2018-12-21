@@ -4,6 +4,7 @@ package pkg30.pkg11.pkg18;
 import java.awt.*;
 import java.awt.geom.*;
 import javax.swing.JFrame;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.SwingConstants;
@@ -32,10 +33,11 @@ public class Main {
         Facet f5 = new Facet(v0, v1, v5, v4, color.green);
         Facet f6 = new Facet(v4, v5, v6, v7, color.pink);
 
-        Cube c = new Cube(f1, f2, f3, f4, f5, f6, color);
-        
-        c.rotate(0, 45, 0);
-        JFrame frame = new Drawer(c);
+        Cube cube = new Cube(f1, f2, f3, f4, f5, f6, color);        
+        cube.rotate(0, 0, 0);
+        cube.translate(-50, -50, -50);
+        JFrame frame = new Drawer(cube);
+        Controller ctrl = new Controller(cube, frame);
         
 //        System.out.println("Вращение плоскости относительно x");
 //        face.rotateByX(90);
