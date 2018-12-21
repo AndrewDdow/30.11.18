@@ -6,7 +6,7 @@ import java.awt.geom.*;
 public class Facet {
     public Vector[] v;
     public Color color;
-    double c = -200;
+    double c = -450;
     public Facet(Vector v1, Vector v2, Vector v3, Vector v4, Color color) {
         v = new Vector[4];
         v[0] = v1;
@@ -78,21 +78,21 @@ public class Facet {
        }
     }
         public void draw2(Graphics2D g2){
-        g2.setColor(color);
-        if(this.normal().z < 0){
-        Path2D path = new Path2D.Double();
+         g2.setColor(this.color);
+
+            Path2D path = new Path2D.Double();
+
+
+            path.moveTo(v[0].x*c/(c-v[0].z), -v[0].y*c/(c-v[0].z));
+            path.lineTo(v[1].x*c/(c-v[1].z), -v[1].y*c/(c-v[1].z));
+            path.lineTo(v[2].x*c/(c-v[2].z), -v[2].y*c/(c-v[2].z));
+            path.lineTo(v[3].x*c/(c-v[3].z), -v[3].y*c/(c-v[3].z));
+
+            path.closePath();
+
+            g2.fill(path);
         
-      
         
-        path.moveTo(v[0].Obor().x, -v[0].Obor().y);
-        path.lineTo(v[1].Obor().x, -v[1].Obor().y);
-        path.lineTo(v[2].Obor().x, -v[2].Obor().y);
-        path.lineTo(v[3].Obor().x, -v[3].Obor().y);
-        path.closePath();
-        g2.draw(path);
-        g2.fill(path);
-        
-        
-       }
+       
     }
 }

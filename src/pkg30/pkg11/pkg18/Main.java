@@ -34,7 +34,7 @@ public class Main {
 
         Cube c = new Cube(f1, f2, f3, f4, f5, f6, color);
         
-        c.rotate(-67, -130,45);
+        c.rotate(0, 45, 0);
         JFrame frame = new Drawer(c);
         
 //        System.out.println("Вращение плоскости относительно x");

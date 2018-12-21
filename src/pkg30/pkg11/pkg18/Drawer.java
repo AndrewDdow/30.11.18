@@ -12,7 +12,7 @@ import javax.swing.JSlider;
 import javax.swing.SwingConstants;
 
 public class Drawer extends JFrame{
-    double c = -200; //our view point (0,0,-200)
+    double c = -300; //our view point (0,0,-200)
     public Drawer (Cube c){
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

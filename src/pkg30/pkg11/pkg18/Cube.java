@@ -37,12 +37,10 @@ public class Cube {
     }
     
     public void PerspecProekcDraw(Graphics2D g2){
-        g2.setColor(color);
-        f[0].draw2(g2);
-        f[1].draw2(g2);
-        f[2].draw2(g2);
-        f[3].draw2(g2);
-        f[4].draw2(g2);
-        f[5].draw2(g2);       
+        g2.setColor(this.color);
+        for (int i = 0; i < 6; i++) {
+            if (f[i].normal().z < 0)
+                f[i].draw2(g2);
+        }      
     }
 }

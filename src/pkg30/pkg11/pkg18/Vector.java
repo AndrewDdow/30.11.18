@@ -45,16 +45,16 @@ public class Vector {
         System.out.println(" x = " + this.x + " y = " + this.y + " z = " + this.z);
         System.out.println("");
     }
-     public Vector Obor() {
-        double x2;
-        double y2;
-        x2 = c/(c-this.z) * this.x;
-        y2 = c/(c-this.z) * this.y;
-        
-        //x2 = c*this.x/this.z;
-        //y2 = c*this.y/this.z;
-        
-        Vector vect = new Vector(x2,y2,0);
-        return vect;
-    }
+//     public Vector Obor() {
+//        double x2;
+//        double y2;
+//        x2 = c/(c-this.z) * this.x;
+//        y2 = c/(c-this.z) * this.y;
+//        
+//        //x2 = c*this.x/this.z;
+//        //y2 = c*this.y/this.z;
+//        
+//        Vector vect = new Vector(x2,y2,0);
+//        return vect;
+//    }
 }
